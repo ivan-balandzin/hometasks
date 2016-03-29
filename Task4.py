@@ -47,6 +47,7 @@ class parent(object):
 		key = p._fields
 		result_dict = dict(zip(key, val))
 		return result_dict
+	
 	#Timestamp and it's formatting
 	timestamp = datetime.datetime.strftime(datetime.datetime.now(), '%Y-%m-%d-%H:%M:%S')
 
@@ -55,11 +56,11 @@ class parent(object):
 
 
 #Text type class
-class ft_cl(parent):
+class ft_class(parent):
 	# Definition of text file function
 	def ft(self, file = "output.txt"):
 		global ss
-		ts=super(ft_cl,self).timestamp
+		ts=super(ft_class,self).timestamp
 		print("\nWriting text snapshot {}:".format(ss))  # Writing info in console
 		f_text = open(file, "a+")
 		f_text.write("__________________________________")
@@ -78,25 +79,26 @@ class ft_cl(parent):
 
 
 #Json type class
-class fj_cl(parent):
+class fj_class(parent):
 	# Definition of json file function
 	def fj(self, file = "output.json"):
 		global ss
-		ts=super(fj_cl,self).timestamp
+		ts=super(fj_class,self).timestamp
 		print("\nWriting json snapshot {}:".format(ss))  # Writing info in console
 		f_json = open(file, "a+")
-		f_json.write("__________________________________")
-		f_json.write("\nSnapshot{0}:{1}\n".format(ss, ts))
-		f_json.write("4 core CPU usage\n")
+		f_json.write('\n{{"Snapshot{0}": "{1}",\n'.format(ss, ts))
+		f_json.write('"4 core CPU usage":\n')
 		json.dump(psutil.cpu_percent(percpu=True), f_json, indent=4)
-		f_json.write("\nVirtual memory usage\n")
-		json.dump(super(fj_cl, self).makedict(psutil.virtual_memory()), f_json, indent=4)
-		f_json.write("\nDisk usage\n")
-		json.dump(super(fj_cl, self).makedict(psutil.disk_io_counters(perdisk=False)), f_json, indent=4)
-		json.dump(super(fj_cl, self).makedict(psutil.disk_usage('/')), f_json, indent=4)
-		f_json.write("\nNetwork\n")
+		f_json.write(",")
+		f_json.write('\n"Virtual memory usage":\n')
+		json.dump(super(fj_class, self).makedict(psutil.virtual_memory()), f_json, indent=4)
+		f_json.write(',\n"Disk usage":\n')
+		json.dump(super(fj_class, self).makedict(psutil.disk_io_counters(perdisk=False)), f_json, indent=4)
+		f_json.write(',\n"Disk IO":\n')
+		json.dump(super(fj_class, self).makedict(psutil.disk_usage('/')), f_json, indent=4)
+		f_json.write(',\n"Network":\n')
 		json.dump(psutil.net_io_counters(pernic=True), f_json, indent=4)
-		f_json.write("\n\n")
+		f_json.write("}\n\n")
 		f_json.close()
 		ss += 1
 		print("Done! Now timeout " + interval + "m")
@@ -114,11 +116,11 @@ def run():
 		print("Configuration:\nUnknown type of output")
 		quit()
 
-text_function=ft_cl()
-json_function=fj_cl()
-
+text_function=ft_class()
+json_function=fj_class()
 
 run()
+
 schedule.every(int(interval)).minutes.do(run)
 
 while True:
