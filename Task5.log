@@ -1,0 +1,50 @@
+INFO       2016-03-29 17:54:42,035 root       Logging INFO level messages
+INFO       2016-03-29 17:54:42,035 root       No output.txt files found, using snapshot №1
+INFO       2016-03-29 17:54:42,035 root       Starting main process
+INFO       2016-03-29 17:54:42,035 root       Startig write snapshot 1 in output.txt file
+INFO       2016-03-29 17:54:42,036 root       Writing in output.txt file has finished
+INFO       2016-03-29 17:54:42,037 root       Main process execution has finished successfully
+INFO       2016-03-29 17:54:42,037 root       Starting schedule process
+INFO       2016-03-29 17:55:12,069 schedule   Running job Every 30 seconds do run() (last run: [never], next run: 2016-03-29 17:55:12)
+INFO       2016-03-29 17:55:12,070 root       Startig write snapshot 2 in output.txt file
+INFO       2016-03-29 17:55:12,073 root       Writing in output.txt file has finished
+INFO       2016-03-29 17:55:42,105 schedule   Running job Every 30 seconds do run() (last run: 2016-03-29 17:55:12, next run: 2016-03-29 17:55:42)
+INFO       2016-03-29 17:55:42,105 root       Startig write snapshot 3 in output.txt file
+INFO       2016-03-29 17:55:42,109 root       Writing in output.txt file has finished
+INFO       2016-03-29 17:56:28,818 root       Logging INFO level messages
+INFO       2016-03-29 17:56:28,818 root       output.txt file exists, searching for snapshot №
+INFO       2016-03-29 17:56:28,818 root       Snapshot № 3 found, using № 4
+INFO       2016-03-29 17:56:28,818 root       Starting main process
+ERROR      2016-03-29 17:56:28,818 root       Can't execute run() function name 'ru' is not defined
+Traceback (most recent call last):
+  File "Task5.py", line 155, in <module>
+    ru()
+NameError: name 'ru' is not defined
+INFO       2016-03-29 17:56:28,818 root       Starting schedule process
+INFO       2016-03-29 17:56:58,850 schedule   Running job Every 30 seconds do run() (last run: [never], next run: 2016-03-29 17:56:58)
+INFO       2016-03-29 17:56:58,851 root       Startig write snapshot 4 in output.txt file
+INFO       2016-03-29 17:56:58,854 root       Writing in output.txt file has finished
+INFO       2016-03-29 17:57:28,886 schedule   Running job Every 30 seconds do run() (last run: 2016-03-29 17:56:58, next run: 2016-03-29 17:57:28)
+INFO       2016-03-29 17:57:28,886 root       Startig write snapshot 5 in output.txt file
+INFO       2016-03-29 17:57:28,890 root       Writing in output.txt file has finished
+INFO       2016-03-29 17:58:15,734 root       Logging INFO level messages
+INFO       2016-03-29 17:58:15,734 root       output.txt file exists, searching for snapshot №
+INFO       2016-03-29 17:58:15,734 root       Snapshot № 5 found, using № 6
+INFO       2016-03-29 17:58:15,734 root       Starting main process
+ERROR      2016-03-29 17:58:15,734 root       Can't execute run() function name 'text_functio' is not defined
+Traceback (most recent call last):
+  File "Task5.py", line 155, in <module>
+    run()
+  File "Task5.py", line 142, in run
+    text_functio.ft()
+NameError: name 'text_functio' is not defined
+INFO       2016-03-29 17:58:15,735 root       Starting schedule process
+INFO       2016-03-29 17:58:45,767 schedule   Running job Every 30 seconds do run() (last run: [never], next run: 2016-03-29 17:58:45)
+INFO       2016-03-29 18:00:20,794 root       Logging INFO level messages
+INFO       2016-03-29 18:00:20,794 root       output.txt file exists, searching for snapshot №
+INFO       2016-03-29 18:00:20,794 root       Snapshot № 5 found, using № 6
+INFO       2016-03-29 18:00:20,794 root       Starting main process
+INFO       2016-03-29 18:00:20,794 root       Startig write snapshot 6 in output.txt file
+INFO       2016-03-29 18:00:20,796 root       Writing in output.txt file has finished
+INFO       2016-03-29 18:00:20,796 root       Main process execution has finished successfully
+INFO       2016-03-29 18:00:20,796 root       Starting schedule process
